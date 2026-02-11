@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Available Events</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f4f6f8;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background: #1e3a8a;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .container {
+            padding: 30px;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+
+        .event-card {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 8px rgba(0,0,0,0.1);
+        }
+
+        .event-card h3 {
+            color: #1e3a8a;
+        }
+
+        .event-card button {
+            margin-top: 10px;
+            padding: 10px;
+            background: #2563eb;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .event-card button:hover {
+            background: #1e40af;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Available Events</h1>
+    <p>Select and register for an event</p>
+</header>
+
+<div class="container">
+
+    <div class="event-card">
+        <h3>Music Concert</h3>
+        <p>Date: 20 March 2026</p>
+        <p>Location: City Stadium</p>
+        <button>Register</button>
+    </div>
+
+    <div class="event-card">
+        <h3>Wedding Ceremony</h3>
+        <p>Date: 25 March 2026</p>
+        <p>Location: Royal Hall</p>
+        <button>Register</button>
+    </div>
+
+    <div class="event-card">
+        <h3>Business Conference</h3>
+        <p>Date: 5 April 2026</p>
+        <p>Location: Convention Center</p>
+        <button>Register</button>
+    </div>
+
+    <div class="event-card">
+        <h3>Charity Fundraising Event</h3>
+        <p>Date: 12 April 2026</p>
+        <p>Location: Community Park</p>
+        <button>Register</button>
+    </div>
+
+</div>
+
+</body>
+</html>

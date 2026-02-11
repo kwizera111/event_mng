@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Event Management System</title>
+
+<style>
+/* RESET */
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    background: #f4f6f8;
+}
+
+/* HEADER */
+header {
+    background: #1e3a8a;
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
+
+/* NAVBAR */
+nav {
+    background: #2563eb;
+}
+
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 20px;
+}
+
+.logo {
+    color: white;
+    font-weight: bold;
+    font-size: 18px;
+}
+
+/* MENU */
+.menu {
+    display: flex;
+    gap: 20px;
+}
+
+.menu a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+/* DROPDOWN */
+.dropdown {
+    position: relative;
+}
+
+.dropdown-btn {
+    background: none;
+    border: none;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    font-size: 15px;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    top: 35px;
+    right: 0;
+    background: white;
+    min-width: 170px;
+    border-radius: 6px;
+    box-shadow: 0 5px 10px rgba(0,0,0,0.2);
+}
+
+.dropdown-content a {
+    display: block;
+    padding: 10px;
+    color: #1e3a8a;
+}
+
+.dropdown-content a:hover {
+    background: #e5e7eb;
+}
+
+/* SHOW DROPDOWN */
+.dropdown-content.show {
+    display: block;
+}
+
+/* HAMBURGER */
+.hamburger {
+    display: none;
+    font-size: 26px;
+    color: white;
+    cursor: pointer;
+}
+
+/* HERO */
+.hero {
+    padding: 50px 20px;
+    text-align: center;
+    background: white;
+}
+
+.hero h1 {
+    color: #1e3a8a;
+}
+
+/* FEATURES */
+.features {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    padding: 30px;
+}
+
+.card {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+/* FOOTER */
+footer {
+    background: #1e3a8a;
+    color: white;
+    text-align: center;
+    padding: 15px;
+}
+
+/* RESPONSIVE */
+@media (max-width: 900px) {
+    .features {
+        grid-template-columns: 1fr;
+    }
+
+    .menu {
+        display: none;
+        flex-direction: column;
+        background: #2563eb;
+        width: 100%;
+        padding: 10px 0;
+    }
+
+    .menu.active {
+        display: flex;
+    }
+
+    .menu a, .dropdown-btn {
+        padding: 10px 20px;
+        text-align: left;
+    }
+
+    .hamburger {
+        display: block;
+    }
+
+    .dropdown-content {
+        position: static;
+        box-shadow: none;
+        background: #1e40af;
+    }
+
+    .dropdown-content a {
+        color: white;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <h1>Event Management System</h1>
+    <p>Manage Events, Schedules & Participants Securely</p>
+</header>
+
+<nav>
+    <div class="nav-container">
+        <div class="logo">EMS</div>
+
+        <div class="hamburger" onclick="toggleMenu()">☰</div>
+
+        <div class="menu" id="menu">
+            <a href="/">Home</a>
+            <a href="/events">Available Events</a>
+            <a href="/adminDash">Contact</a>
+
+            <div class="dropdown">
+                <button class="dropdown-btn" onclick="toggleDropdown(event)">
+                    Sign In ▾
+                </button>
+                <div class="dropdown-content" id="dropdown">
+                    <a href="/auth/admin/login">Admin Login</a>
+                    <a href="/auth/staff/login">Staff Login</a>
+                    <a href="/auth/user/login">Participant Login</a>
+                </div>
+            </div>
+
+            <a href="/regist">Sign Up</a>
+        </div>
+    </div>
+</nav>
+
+<section class="hero">
+    <h1>Welcome to Our Events Platform</h1>
+    <p>
+        We organize concerts, weddings, conferences, workshops,
+        sports tournaments, and charity events.
+    </p>
+</section>
+
+<section class="features">
+    <div class="card">
+        <h3>Event Management</h3>
+        <p>Create and manage different types of events easily.</p>
+    </div>
+
+    <div class="card">
+        <h3>Secure Access</h3>
+        <p>Role-based login for admin, staff, and participants.</p>
+    </div>
+
+    <div class="card">
+        <h3>Schedules</h3>
+        <p>Organize sessions, timings, and activities.</p>
+    </div>
+</section>
+
+<footer>
+    <p>&copy; 2026 Event Management System</p>
+</footer>
+
+<script>
+function toggleMenu() {
+    document.getElementById("menu").classList.toggle("active");
+}
+
+function toggleDropdown(event) {
+    event.stopPropagation();
+    document.getElementById("dropdown").classList.toggle("show");
+}
+
+document.addEventListener("click", () => {
+    document.getElementById("dropdown").classList.remove("show");
+});
+</script>
+
+</body>
+</html>

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Admin Dashboard</title>
+    <link rel="stylesheet" href="/css/style.css">
+    <style>
+        main {
+            margin-left: 220px; /* Space for sidebar */
+            padding: 20px;
+        }
+        .card {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 8px rgba(0,0,0,0.1);
+            display: inline-block;
+            width: 200px;
+            margin: 10px;
+            text-align: center;
+        }
+        .card h3 { margin: 0 0 10px 0; }
+        .card a {
+            display: inline-block;
+            margin-top: 10px;
+            padding: 8px 12px;
+            background: #2563eb;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+        }
+        .card a:hover {
+            background: #1e40af;
+        }
+    </style>
+</head>
+<body>
+    <%- include('../partials/header') %>
+    <%- include('../partials/sidebar') %>
+
+    <main>
+        <h2>Admin Dashboard</h2>
+        <p>Welcome, Admin! Use the cards below to manage the system.</p>
+
+        <div class="card">
+            <h3>Events</h3>
+            <p>Create or edit events</p>
+            <a href="/admin/manage-events">Manage</a>
+        </div>
+
+        <div class="card">
+            <h3>Schedules</h3>
+            <p>Update event schedules</p>
+            <a href="/admin/manage-schedules">Manage</a>
+        </div>
+
+        <div class="card">
+            <h3>Participants</h3>
+            <p>View and manage participants</p>
+            <a href="/admin/manage-participants">Manage</a>
+        </div>
+
+        <div class="card">
+            <h3>Reports</h3>
+            <p>View system reports</p>
+            <a href="/admin/reports">View</a>
+        </div>
+    </main>
+</body>
+</html>
